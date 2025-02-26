@@ -62,6 +62,7 @@ pnpm dev
 Visit http://localhost:3000 to view the application.
 
 ## Project Structure
+```
 nextmate-dapp/
 ├── src/
 │   ├── app/           # Main application directory
@@ -76,6 +77,7 @@ nextmate-dapp/
 ├── prisma/           # Database schema and migrations
 ├── public/          # Public assets
 └── types/           # Global type declarations
+```
 
 ## Available Scripts
 ```bash
