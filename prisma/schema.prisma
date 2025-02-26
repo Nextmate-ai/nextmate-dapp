@@ -1,0 +1,411 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                      String                   @id @default(auto()) @map("_id") @db.ObjectId
+  userName                String?
+  email                   String?
+  wallet                  String?
+  account                 String?
+  googleId                String?
+  password                String?
+  createdAt               DateTime                 @default(now())
+  lastLogin               DateTime
+  balance                 Balance?
+  characters              UserCharacter[]
+  purchasedStories        UserStory[]
+  drawRecords             DrawRecord[]
+  weeklySignInRecords     WeeklySignInRecord[]
+  accumulatedSignInRecord AccumulatedSignInRecord?
+  invitationCode          String?                  @unique
+  inviterId               String?                  @db.ObjectId
+  inviter                 User?                    @relation("Invitations", fields: [inviterId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  invitees                User[]                   @relation("Invitations")
+  sentInvitations         Invitation[]             @relation("InvitationSender")
+  receivedInvitation      Invitation?              @relation("InvitationReceiver")
+  quizAttempts            QuizAttempt[]
+  dailyQuizCounts         DailyQuizCount[]
+  equipment               UserEquipment[]
+  lotteryRecords          LotteryRecord[]
+  restStartTime           DateTime?
+  lastActiveTime          DateTime?                @default(now())
+  lastChatTime            DateTime?
+  lastChatUserCharacterId String?                  @db.ObjectId
+  bannedStatus            Int                      @default(0)
+  bannedReason            Int?
+
+  @@index([email])
+  @@index([wallet])
+  @@index([account])
+  @@index([googleId])
+}
+
+model Invitation {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  inviterId String   @db.ObjectId
+  inviteeId String   @unique @db.ObjectId
+  invitedAt DateTime @default(now())
+  inviter   User     @relation("InvitationSender", fields: [inviterId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  invitee   User     @relation("InvitationReceiver", fields: [inviteeId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Question {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  content       String
+  options       String[]
+  correctAnswer Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model QuizAttempt {
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId         String    @db.ObjectId
+  startTime      DateTime
+  endTime        DateTime?
+  correctCount   Int       @default(0)
+  incorrectCount Int       @default(0)
+  questions      Json
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  user           User      @relation(fields: [userId], references: [id])
+}
+
+model DailyQuizCount {
+  id     String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId String   @db.ObjectId
+  date   DateTime
+  count  Int      @default(0)
+  user   User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, date])
+}
+
+model WeeklySignInRecord {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @unique @db.ObjectId
+  weekStart DateTime
+  days      Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model AccumulatedSignInRecord {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @unique @db.ObjectId
+  totalDays Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      User     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Balance {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  userId  String @unique @db.ObjectId
+  diamond Int    @default(0)
+  gold    Int    @default(0)
+  energy  Int    @default(90)
+  user    User   @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+// todo: Balance流水记录表
+
+model UserCharacter {
+  id                     String              @id @default(auto()) @map("_id") @db.ObjectId
+  userId                 String              @db.ObjectId
+  characterId            String              @db.ObjectId
+  level                  Int                 @default(1)
+  experience             Int                 @default(0)
+  introduction           String?
+  intimacy               Int                 @default(100)
+  ability                Int                 @default(100)
+  leisure                Int                 @default(100)
+  lastLevelUpTime        DateTime            @default(now())
+  backgroundImage        String?
+  equipmentName          String?
+  experienceToNextLevel  Int                 @default(100)
+  fatigueValue           Int                 @default(0)
+  skills                 String[]            @default([])
+  achievements           String[]            @default([])
+  lastInteractionDate    DateTime            @default(now())
+  favoriteTopics         String[]            @default([])
+  currentMilestone       Int                 @default(0)
+  lastLeaveDate          DateTime            @default(now())
+  customOpeningStatement String?
+  customBackgroundStory  String?
+  customSettings         Json?
+  lastStudyTime          DateTime?
+  user                   User                @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  character              Character           @relation(fields: [characterId], references: [id])
+  stories                UserStory[]
+  ownedLotteries         UserLottery[]
+  chatHistory            ChatRecord[]
+  ReplicaChatRecord      ReplicaChatRecord[]
+
+  @@unique([userId, characterId])
+}
+
+model Equipment {
+  id                  String             @id @default(auto()) @map("_id") @db.ObjectId
+  name                String
+  description         String?
+  type                String?
+  image               String?
+  attributes          Json?
+  users               UserEquipment[]
+  characterTemplate   CharacterTemplate? @relation(fields: [characterTemplateId], references: [id])
+  characterTemplateId String?            @db.ObjectId
+  characterId         String             @db.ObjectId
+  character           Character?         @relation(fields: [characterId], references: [id])
+  star                Int
+  lotteryItems        LotteryItem[]
+}
+
+model UserEquipment {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String    @db.ObjectId
+  characterId String    @db.ObjectId
+  equipmentId String    @db.ObjectId
+  isEquipped  Boolean   @default(false)
+  acquiredAt  DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id])
+  equipment   Equipment @relation(fields: [equipmentId], references: [id])
+}
+
+model LotteryRecord {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String   @db.ObjectId
+  type      String
+  rewardId  String   @db.ObjectId
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model Character {
+  id                String            @id @default(auto()) @map("_id") @db.ObjectId
+  name              String
+  avatar            String
+  backgroundImage   String?
+  openingStatement  String
+  backgroundStory   String
+  introduction      String?
+  level             Int               @default(1)
+  experience        Int               @default(0)
+  nextLevelRequired Int               @default(100)
+  settings          Json
+  isPaid            Boolean           @default(false)
+  personalityTags   String[]          @default([])
+  specialAbilities  String[]          @default([])
+  attributes        Json
+  intimacy          Int               @default(0)
+  ability           Int               @default(0)
+  leisure           Int               @default(0)
+  userCharacters    UserCharacter[]
+  fatigueValue      Int               @default(0)
+  template          CharacterTemplate @relation(fields: [templateId], references: [id])
+  templateId        String            @db.ObjectId
+  // lastLeaveDate     DateTime          @default(now())
+  milestoneStoryIds String[]          @db.ObjectId
+  lotteryStoryIds   String[]          @db.ObjectId
+  equipments        Equipment[]
+}
+
+model CharacterTemplate {
+  id                     String                   @id @default(auto()) @map("_id") @db.ObjectId
+  name                   String
+  avatar                 String
+  backgroundImage        String[]
+  currentBackgroundIndex Int                      @default(0)
+  introduction           String?
+  openingStatement       String
+  backgroundStory        String
+  settings               Json
+  isPaid                 Boolean                  @default(false)
+  level                  Int                      @default(1)
+  experience             Int                      @default(0)
+  nextLevelRequired      Int                      @default(100)
+  intimacy               Int                      @default(0)
+  ability                Int                      @default(0)
+  leisure                Int                      @default(0)
+  personalityTags        String[]                 @default([])
+  specialAbilities       String[]                 @default([])
+  attributes             Json
+  fatigueValue           Int                      @default(0)
+  stories                CharacterTemplateStory[]
+  // lastLeaveDate          DateTime                 @default(now())
+  characters             Character[]
+  equipment              Equipment[]
+  Story                  Story[]
+}
+
+model CharacterTemplateStory {
+  id                  String            @id @default(auto()) @map("_id") @db.ObjectId
+  characterTemplate   CharacterTemplate @relation(fields: [characterTemplateId], references: [id])
+  characterTemplateId String            @db.ObjectId
+  story               Story             @relation(fields: [storyId], references: [id])
+  storyId             String            @db.ObjectId
+  type                StoryType         @default(LOTTERY)
+
+  @@unique([characterTemplateId, storyId])
+}
+
+enum StoryType {
+  MILESTONE
+  LOTTERY
+}
+
+model Story {
+  id                  String    @id @default(auto()) @map("_id") @db.ObjectId
+  title               String
+  content             String
+  linkAvatarID        Int?
+  isOwned             Boolean?
+  description         String
+  backgroundImage     String[]
+  type                StoryType
+  gem                 Int
+  diamond             Int
+  start               Int
+  option              String[]
+  trigger             Int
+  answerMe            String[]
+  answer              String[]
+  result              String[]
+  startImage          String[]
+  star                Int
+  milestoneOrder      Int?
+  condition           Json?
+  benefits            Json?
+  produceNum          Int?
+  characterTemplateId String?   @db.ObjectId
+
+  purchasedBy       UserStory[]
+  lotteryItems      LotteryItem[]
+  CharacterTemplate CharacterTemplate?       @relation(fields: [characterTemplateId], references: [id])
+  templateStories   CharacterTemplateStory[]
+}
+
+model UserStory {
+  id          String              @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String              @db.ObjectId
+  storyId     String              @db.ObjectId
+  characterId String              @db.ObjectId
+  status      String?
+  result      String?
+  resultImage String?
+  isOwned     Boolean             @default(false)
+  purchasedAt DateTime            @default(now())
+  count       Int                 @default(1)
+  user        User                @relation(fields: [userId], references: [id])
+  story       Story               @relation(fields: [storyId], references: [id])
+  character   UserCharacter       @relation(fields: [characterId], references: [id])
+  chatRecords ReplicaChatRecord[] @relation("ReplicaChatRecordToUserStory")
+
+  @@unique([userId, storyId, characterId])
+}
+
+model UserLottery {
+  id              String        @id @default(auto()) @map("_id") @db.ObjectId
+  userCharacterId String        @db.ObjectId
+  lotteryItemId   String        @db.ObjectId
+  userCharacter   UserCharacter @relation(fields: [userCharacterId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  lotteryItem     LotteryItem   @relation(fields: [lotteryItemId], references: [id])
+  receivedAt      DateTime      @default(now())
+}
+
+// 记录的是chat的communicate的进度
+model ChatRecord {
+  id              String        @id @default(auto()) @map("_id") @db.ObjectId
+  userCharacterId String        @db.ObjectId
+  userCharacter   UserCharacter @relation(fields: [userCharacterId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  messages        Message[]
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+// 记录的是chat的communicate的进度
+model Message {
+  id           String     @id @default(auto()) @map("_id") @db.ObjectId
+  chatRecordId String     @db.ObjectId
+  chatRecord   ChatRecord @relation(fields: [chatRecordId], references: [id], onDelete: Cascade)
+  role         String
+  content      String
+  isVisible    Boolean?   @default(true)
+  createdAt    DateTime   @default(now())
+}
+
+// 记录的是story communicate的进度
+model ReplicaChatRecord {
+  id              String           @id @default(auto()) @map("_id") @db.ObjectId
+  userStoryId     String           @db.ObjectId
+  userStory       UserStory        @relation("ReplicaChatRecordToUserStory", fields: [userStoryId], references: [id])
+  userCharacterId String           @db.ObjectId
+  userCharacter   UserCharacter    @relation(fields: [userCharacterId], references: [id])
+  messages        ReplicaMessage[]
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+}
+
+// 记录的是story communicate的进度
+model ReplicaMessage {
+  id           String            @id @default(auto()) @map("_id") @db.ObjectId
+  chatRecordId String            @db.ObjectId
+  chatRecord   ReplicaChatRecord @relation(fields: [chatRecordId], references: [id], onDelete: Cascade)
+  role         String
+  content      String
+  isVisible    Boolean?          @default(true)
+  createdAt    DateTime          @default(now())
+}
+
+model LotteryPool {
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
+  name        String         @unique
+  description String?
+  items       LotteryItem[]
+  config      LotteryConfig?
+}
+
+model LotteryItem {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  poolId      String        @db.ObjectId
+  name        String
+  probability Float
+  type        String
+  rewardId    String
+  star        Int
+  pool        LotteryPool   @relation(fields: [poolId], references: [id])
+  ownedBy     UserLottery[]
+  story       Story?        @relation(fields: [storyId], references: [id])
+  storyId     String?       @db.ObjectId
+  equipment   Equipment?    @relation(fields: [equipmentId], references: [id])
+  equipmentId String?       @db.ObjectId
+}
+
+model LotteryConfig {
+  id            String      @id @default(auto()) @map("_id") @db.ObjectId
+  lotteryType   String      @unique
+  currentPoolId String      @unique @db.ObjectId
+  currentPool   LotteryPool @relation(fields: [currentPoolId], references: [id])
+}
+
+model DrawRecord {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId      String   @db.ObjectId
+  lotteryType String
+  items       Json[]
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model Sentence {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  text  String
+  order Int    @unique
+}

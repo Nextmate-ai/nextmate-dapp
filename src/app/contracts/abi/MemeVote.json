@@ -1,0 +1,68 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "voteId",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "voteTokenAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "isVoteUp",
+                "type": "bool"
+            }
+        ],
+        "name": "placeVote",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "voteId",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "userId",
+                "type": "string"
+            },
+            {
+                "internalType": "address",
+                "name": "placeTokenAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "placeTokenAmount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "voteTokenAddress",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "isVoteUp",
+                "type": "bool"
+            }
+        ],
+        "name": "placeVoteWithERC20",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

@@ -1,0 +1,18 @@
+.rectangle {
+	width: 72px;
+	height: 32px;
+	flex-shrink: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 32px;
+	text-align: center;
+	clip-path: polygon(
+		5px 0,
+		/* 左上角起点 */ 100% 0,
+		/* 右上角 */ 100% calc(100% - 5px),
+		/* 右下角起点 */ calc(100% - 5px) 100%,
+		/* 右下角终点 */ 0 100%,
+		/* 左下角 */ 0 5px /* 左上角终点 */
+	);
+}

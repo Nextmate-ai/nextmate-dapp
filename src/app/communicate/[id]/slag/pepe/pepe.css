@@ -1,0 +1,134 @@
+.wrapper {
+	height: 100vh;
+	width: 120vh;
+	/* left: 10vw; */
+	margin: 0 auto;
+	position: relative;
+}
+
+.stage_highlight_purple {
+	position: absolute;
+	top: -20vh;
+	left: -85vh; /* 调整到左侧 */
+	width: 85vh;
+	height: 100%;
+	overflow: hidden;
+	background-image: radial-gradient(
+		ellipse closest-side at 50% 82%,
+		rgba(216, 61, 216, 0.8),
+		rgba(0, 0, 0, 0) 100%
+	);
+	animation: move_highlight 3s linear infinite; /* 使用相同动画 */
+}
+
+.spotlight_swivel_purple {
+	animation: rotate_spotlight_mirror 3s linear infinite;
+}
+
+.lamp_purple {
+	position: absolute;
+	width: 30vh;
+	height: 480vh;
+	background-image: radial-gradient(
+		ellipse,
+		rgba(216, 61, 216, 0.8),
+		rgba(216, 61, 216, 0.2) 25%,
+		rgba(216, 61, 216, 0) 50%
+	);
+	top: -220vh;
+	left: -12vh;
+	transform: perspective(23vh) rotateX(30deg);
+}
+
+.stage_highlight_blue {
+	position: absolute;
+	top: -20vh;
+	left: 25vh;
+	width: 85vh;
+	height: 100%;
+	overflow: hidden;
+	background-image: radial-gradient(
+		ellipse closest-side at 50% 82%,
+		rgba(110, 103, 246, 0.8),
+		rgba(0, 0, 0, 0) 100%
+	);
+	animation: move_highlight 3s linear infinite;
+}
+.spotlight_swivel_blue {
+	animation: rotate_spotlight 3s linear infinite;
+}
+.lamp_blue {
+	position: absolute;
+	width: 30vh;
+	height: 480vh;
+	background-image: radial-gradient(
+		ellipse,
+		rgba(110, 103, 246, 0.8),
+		rgba(110, 103, 246, 0.2) 25%,
+		rgba(110, 103, 246, 0) 50%
+	);
+	top: -220vh;
+	left: 30vh;
+	transform: perspective(23vh) rotateX(30deg);
+}
+
+@keyframes rotate_spotlight {
+	0% {
+		transform: rotate(0deg) scaleY(1) translateY(0);
+	}
+	25% {
+		transform: rotate(-7deg) scaleY(1.1) translateY(-3vh);
+	}
+	50% {
+		transform: rotate(0deg) scaleY(1) translateY(0);
+	}
+	75% {
+		transform: rotate(29deg) scaleY(1.1) translateY(-3vh);
+	}
+}
+
+@keyframes rotate_spotlight_mirror {
+	0% {
+		transform: rotate(0deg) scaleY(1) translateY(0);
+	}
+	25% {
+		transform: rotate(7deg) scaleY(1.1) translateY(-3vh);
+	}
+	50% {
+		transform: rotate(0deg) scaleY(1) translateY(0);
+	}
+	75% {
+		transform: rotate(-18deg) scaleY(1.1) translateY(-32vh);
+	}
+}
+
+@keyframes move_highlight {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(20vh);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(-60vh);
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-12px); /* 向上浮动10px */
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+.floating-text {
+	animation: float 1s ease-in-out infinite; /* 2秒循环动画 */
+}

@@ -1,0 +1,22 @@
+.bgInput {
+	background-image: url('/img/bg-referral-code.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.input {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	background: transparent;
+	border: none;
+	line-height: 1 !important;
+	outline: none;
+	display: block;
+}
+.input:focus {
+	border: none;
+	box-shadow: none !important;
+}

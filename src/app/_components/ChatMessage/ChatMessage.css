@@ -1,0 +1,18 @@
+.flip-x {
+    transform: scaleX(-1);
+}
+
+.vertical-trapezoid-right {
+    width: 6px;           
+    background: white;            
+    transform: perspective(0.3em) rotateY(-3deg);  
+    margin-left: 4px;   
+}
+
+.vertical-trapezoid-left {
+    width: 6px;           
+    background: white;            
+    transform: perspective(0.3em) rotateY(3deg);    
+    margin-right: 4px; 
+}
+ 

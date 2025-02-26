@@ -1,0 +1,31 @@
+#login-drawer {
+	.adapter-react-button {
+		background-color: rgba(0, 0, 0, 0);
+		background-image: url('/img/bg-dotted.png');
+		background-size: cover;
+		display: flex;
+		/* width: 312px; */
+		height: 50px;
+		padding: 12px 60px;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		font-weight: 600;
+		color: black;
+		margin: 0 auto;
+		color: white;
+	}
+}
+
+.adapter-dropdown {
+	width: 100%;
+	.adapter-react-button {
+		background-image: none !important;
+		border: 1px solid white;
+		width: 288px !important;
+	}
+}
+
+.adapter-wallet-item {
+	margin-bottom: 16px;
+}
