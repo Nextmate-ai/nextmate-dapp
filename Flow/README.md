@@ -7,14 +7,23 @@ Empowering Cryptocurrency with New Use Cases and Utility
 
 - Multi-chain Wallet Support
 
-    We have deployed [smart contracts](https://explorer.garfield-testnet.zircuit.com/address/0x7C13A2a4c0C2E3976B9b29150d05e27CcC494798) on Zircuit, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Zircuit network.
-
+    We have deployed [smart contracts](https://evm-testnet.flowscan.io/address/0xd14F1323a2D3926d66ba64c5F1A01317c8254eFc) on Flow, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Flow network.
 
 - Telegram Integration
 - Prediction Markets
 - Asset Management
 - Real-time Balance Display
 - Multi-language Support
+
+## Team
+
+Fred Li, Product Manager, Tsinghua University, 4+ years of experience in product management, 3+ years of experience in Web3 industry, Worked at a top-tier venture capital firm.
+
+Kelly Wang, Product Designer, Tsinghua University, University of Washington, 3+ years of experience in product design。
+
+Peter Zhu, Developer, University of Southern California, 4 years of SDE in TikTok.
+
+Leo Du, Developer, 3+ years of web3 work experience
 
 ## Tech Stack
 

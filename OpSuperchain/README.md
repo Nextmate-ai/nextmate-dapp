@@ -7,7 +7,7 @@ Empowering Cryptocurrency with New Use Cases and Utility
 
 - Multi-chain Wallet Support
 
-    We have deployed [smart contracts](https://somnia-testnet.socialscan.io/address/0x508010006c51ba408b0b73294066b5cc7aa2ac7b) on Somnia, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Somnia network.
+    We have deployed [smart contracts](https://optimism-interop-alpha-0.blockscout.com/address/0x1199f19965ac5c32A390Fd7DECb5cc1D5e9461ca) on Op Superchain, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Op Superchain network.
 
 
 - Telegram Integration
@@ -15,6 +15,16 @@ Empowering Cryptocurrency with New Use Cases and Utility
 - Asset Management
 - Real-time Balance Display
 - Multi-language Support
+
+## Team
+
+Fred Li, Product Manager, Tsinghua University, 4+ years of experience in product management, 3+ years of experience in Web3 industry, Worked at a top-tier venture capital firm.
+
+Kelly Wang, Product Designer, Tsinghua University, University of Washington, 3+ years of experience in product design。
+
+Peter Zhu, Developer, University of Southern California, 4 years of SDE in TikTok.
+
+Leo Du, Developer, 3+ years of web3 work experience
 
 ## Tech Stack
 
