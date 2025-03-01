@@ -15,6 +15,16 @@ Empowering Cryptocurrency with New Use Cases and Utility
 - Real-time Balance Display
 - Multi-language Support
 
+## Team
+
+Fred Li, Product Manager, Tsinghua University, 4+ years of experience in product management, 3+ years of experience in Web3 industry, Worked at a top-tier venture capital firm.
+
+Kelly Wang, Product Designer, Tsinghua University, University of Washington, 3+ years of experience in product design。
+
+Peter Zhu, Developer, University of Southern California, 4 years of SDE in TikTok.
+
+Leo Du, Developer, 3+ years of web3 work experience
+
 ## Tech Stack
 
 - Next.js 14
