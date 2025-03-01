@@ -3,9 +3,9 @@
 Decentralized AI-Driven Prediction Market:
 Empowering Cryptocurrency with New Use Cases and Utility
 
-Create an account using the Hedera Developer Portal: [0.0.5614345](https://hashscan.io/testnet/account/0.0.5614345?pc=1&pa=1&pr=1&ps=1&ph=1&pf=1&kf=0.0.5638823&pt=1&pn=1)
-Create a test token using the Hedera Token Service (HTS): [0.0.5638858 (ETH Denver Test (EDT))](https://hashscan.io/testnet/token/0.0.5638858)
-Create a smart contract using the Hedera testnet: [0.0.5638631](https://hashscan.io/testnet/contract/0.0.5638631?pa=1&ps=1&pr=1&pf=1)
+- Create an account using the Hedera Developer Portal: [0.0.5614345](https://hashscan.io/testnet/account/0.0.5614345?pc=1&pa=1&pr=1&ps=1&ph=1&pf=1&kf=0.0.5638823&pt=1&pn=1).
+- Create a test token using the Hedera Token Service (HTS): [0.0.5638858 (ETH Denver Test (EDT))](https://hashscan.io/testnet/token/0.0.5638858).
+- Create a smart contract using the Hedera testnet: [0.0.5638631](https://hashscan.io/testnet/contract/0.0.5638631?pa=1&ps=1&pr=1&pf=1)
 
 ## Features
 
