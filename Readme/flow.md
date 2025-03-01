@@ -6,9 +6,6 @@ Empowering Cryptocurrency with New Use Cases and Utility
 ## Features
 
 - Multi-chain Wallet Support
-
-  [How we integrated with Zircuit](./Readme/Zircuit.md)
-
 - Telegram Integration
 - Prediction Markets
 - Asset Management

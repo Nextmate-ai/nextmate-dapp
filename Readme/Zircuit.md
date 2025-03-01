@@ -7,7 +7,8 @@ Empowering Cryptocurrency with New Use Cases and Utility
 
 - Multi-chain Wallet Support
 
-  [How we integrated with Zircuit](./Readme/Zircuit.md)
+    We have deployed [smart contracts](https://explorer.garfield-testnet.zircuit.com/address/0x7C13A2a4c0C2E3976B9b29150d05e27CcC494798) on Zircuit, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Zircuit network.
+
 
 - Telegram Integration
 - Prediction Markets
