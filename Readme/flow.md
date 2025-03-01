@@ -6,6 +6,9 @@ Empowering Cryptocurrency with New Use Cases and Utility
 ## Features
 
 - Multi-chain Wallet Support
+
+    We have deployed [smart contracts](https://evm-testnet.flowscan.io/address/0xd14F1323a2D3926d66ba64c5F1A01317c8254eFc) on Flow, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Flow network.
+
 - Telegram Integration
 - Prediction Markets
 - Asset Management

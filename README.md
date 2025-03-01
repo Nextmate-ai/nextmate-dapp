@@ -8,6 +8,7 @@ Empowering Cryptocurrency with New Use Cases and Utility
 - Multi-chain Wallet Support
 
   [How we integrated with Zircuit](./Readme/Zircuit.md)
+  [How we integrated with Flow](./Readme/flow.md)
 
 - Telegram Integration
 - Prediction Markets
