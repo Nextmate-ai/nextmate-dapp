@@ -9,13 +9,13 @@ Empowering Cryptocurrency with New Use Cases and Utility
 
   [How we integrated with Zircuit](./Zircuit/README.md)
 
-  [How we integrated with Flow](./Flow/README.md)
-
-  [How we integrated with Op Superchain](./OpSuperchain/README.md)
-
   [How we integrated with Somnia](./Somnia/README.md)
 
+  [How we integrated with Flow](./Flow/README.md)
+
   [How we integrated with ZKsync](./ZKsync/README.md)
+
+  [How we integrated with Op Superchain](./OpSuperchain/README.md)
 
 - Telegram Integration
 - Prediction Markets
