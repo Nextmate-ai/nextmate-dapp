@@ -3,15 +3,25 @@
 Decentralized AI-Driven Prediction Market:
 Empowering Cryptocurrency with New Use Cases and Utility
 
+Key Highlights:
+- Decentralization: Users can create event pools based on personal interests without restrictions, earning rewards and promoting true decentralization and user-generated content (UGC) for Web3 adoption.
+- AI-Driven: Our platform uses AI insights to provide tools for smarter, informed predictions.
+- Empowering Tokens: We support various tokens in our prediction markets, offering real use cases and utility for cryptocurrencies.
+- Global Reach: With over 7 million users and 70+ global partners, including OKX, Bitget, Metis, Sunpump, Neo, Sundog, and Hippo.
+
+Explore Now:
+
+Twitter: twitter.com/nextmate_ai
+
+Website: nextmate.ai
+
+Telegram Group: t.me/nextmate_ai
+
 ## Features
 
 - Multi-chain Wallet Support
 
-  [How we integrated with Base smart wallet](./BaseSmartWallet/README.md)
-
-  [How we integrated with Zetachain](./Zetachain/README.md)
-
-  
+    We have deployed [smart contracts](https://athens.explorer.zetachain.com/address/0x0023bbde50bb6b7e057e33beedd46cb3c9aada47) on Zetachain, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Zetachain network.
 
 - Telegram Integration
 - Prediction Markets
