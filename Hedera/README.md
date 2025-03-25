@@ -3,29 +3,29 @@
 Decentralized AI-Driven Prediction Market:
 Empowering Cryptocurrency with New Use Cases and Utility
 
+- Create an account using the Hedera Developer Portal [0.0.5614345](https://hashscan.io/testnet/account/0.0.5614345?pc=1&pa=1&pr=1&ps=1&ph=1&pf=1&kf=0.0.5638823&pt=1&pn=1).
+- Create a test token using the Hedera Token Service (HTS) [0.0.5638858 (ETH Denver Test (EDT))](https://hashscan.io/testnet/token/0.0.5638858).
+
+Key Highlights:
+- Decentralization: Users can create event pools based on personal interests without restrictions, earning rewards and promoting true decentralization and user-generated content (UGC) for Web3 adoption.
+- AI-Driven: Our platform uses AI insights to provide tools for smarter, informed predictions.
+- Empowering Tokens: We support various tokens in our prediction markets, offering real use cases and utility for cryptocurrencies.
+- Global Reach: With over 7 million users and 70+ global partners, including OKX, Bitget, Metis, Sunpump, Neo, Sundog, and Hippo.
+
+Explore Now:
+
+Twitter: twitter.com/nextmate_ai
+
+Website: nextmate.ai
+
+Telegram Group: t.me/nextmate_ai
+
 ## Features
 
 - Multi-chain Wallet Support
 
-  [How we integrated with Base smart wallet](./BaseSmartWallet/README.md)
+    We have deployed [smart contracts](https://hashscan.io/testnet/contract/0.0.5638631?pa=1&ps=1&pr=1&pf=1) on Hedera, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Hedera network.
 
-   [How we integrated with Flow](./Flow/README.md)
-
-   [How we integrated with Hedera](./Hedera/README.md)
-
-   [How we integrated with Op Superchain](./OpSuperchain/README.md)
-
-  [How we integrated with Somnia](./Somnia/README.md)
-
-  [How we integrated with Sonic](./Sonic/README.md)
-  
-  [How we integrated with Zetachain](./Zetachain/README.md)
-
-  [How we integrated with Zircuit](./Zircuit/README.md)
-
-  [How we integrated with ZKsync](./ZKsync/README.md)
-
-  
 
 - Telegram Integration
 - Prediction Markets

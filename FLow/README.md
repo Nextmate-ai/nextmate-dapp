@@ -3,29 +3,25 @@
 Decentralized AI-Driven Prediction Market:
 Empowering Cryptocurrency with New Use Cases and Utility
 
+Key Highlights:
+- Decentralization: Users can create event pools based on personal interests without restrictions, earning rewards and promoting true decentralization and user-generated content (UGC) for Web3 adoption.
+- AI-Driven: Our platform uses AI insights to provide tools for smarter, informed predictions.
+- Empowering Tokens: We support various tokens in our prediction markets, offering real use cases and utility for cryptocurrencies.
+- Global Reach: With over 7 million users and 70+ global partners, including OKX, Bitget, Metis, Sunpump, Neo, Sundog, and Hippo.
+
+Explore Now:
+
+Twitter: twitter.com/nextmate_ai
+
+Website: nextmate.ai
+
+Telegram Group: t.me/nextmate_ai
+
 ## Features
 
 - Multi-chain Wallet Support
 
-  [How we integrated with Base smart wallet](./BaseSmartWallet/README.md)
-
-   [How we integrated with Flow](./Flow/README.md)
-
-   [How we integrated with Hedera](./Hedera/README.md)
-
-   [How we integrated with Op Superchain](./OpSuperchain/README.md)
-
-  [How we integrated with Somnia](./Somnia/README.md)
-
-  [How we integrated with Sonic](./Sonic/README.md)
-  
-  [How we integrated with Zetachain](./Zetachain/README.md)
-
-  [How we integrated with Zircuit](./Zircuit/README.md)
-
-  [How we integrated with ZKsync](./ZKsync/README.md)
-
-  
+    We have deployed [smart contracts](https://evm-testnet.flowscan.io/address/0xd14F1323a2D3926d66ba64c5F1A01317c8254eFc) on Flow, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Flow network.
 
 - Telegram Integration
 - Prediction Markets
