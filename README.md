@@ -7,23 +7,7 @@ Empowering Cryptocurrency with New Use Cases and Utility
 
 - Multi-chain Wallet Support
 
-  [How we integrated with Base smart wallet](./BaseSmartWallet/README.md)
-
-   [How we integrated with Flow](./Flow/README.md)
-
-   [How we integrated with Hedera](./Hedera/README.md)
-
-   [How we integrated with Op Superchain](./OpSuperchain/README.md)
-
-  [How we integrated with Somnia](./Somnia/README.md)
-
   [How we integrated with Sonic](./Sonic/README.md)
-  
-  [How we integrated with Zetachain](./Zetachain/README.md)
-
-  [How we integrated with Zircuit](./Zircuit/README.md)
-
-  [How we integrated with ZKsync](./ZKsync/README.md)
 
   
 
