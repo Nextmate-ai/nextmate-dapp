@@ -19,6 +19,10 @@ Telegram Group: t.me/nextmate_ai
 
 ## Features
 
+- Multi-chain Wallet Support
+
+    We have deployed [smart contracts](https://explorer.sonic.game/address/6zMNJsDNbL4N8L9KfLtvgbwRpwEu233C22ujyRqFrS1W) on Sonic, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Sonic network.
+
 - Telegram Integration
 - Prediction Markets
 - Asset Management
