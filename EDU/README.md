@@ -3,15 +3,25 @@
 Decentralized AI-Driven Prediction Market:
 Empowering Cryptocurrency with New Use Cases and Utility
 
+Key Highlights:
+- Decentralization: Users can create event pools based on personal interests without restrictions, earning rewards and promoting true decentralization and user-generated content (UGC) for Web3 adoption.
+- AI-Driven: Our platform uses AI insights to provide tools for smarter, informed predictions.
+- Empowering Tokens: We support various tokens in our prediction markets, offering real use cases and utility for cryptocurrencies.
+- Global Reach: With over 7 million users and 70+ global partners, including OKX, Bitget, Metis, Sunpump, Neo, Sundog, and Hippo.
+
+Explore Now:
+
+Twitter: twitter.com/nextmate_ai
+
+Website: nextmate.ai
+
+Telegram Group: t.me/nextmate_ai
+
 ## Features
 
 - Multi-chain Wallet Support
 
-  [How we integrated with EDU](./EDU/README.md)
-
-  [How we integrated with Sonic](./Sonic/README.md)
-
-  
+    We have deployed [smart contracts](https://educhain.blockscout.com/address/0x942194F1248111967418010dDc4391208CaF36aa) on EDU Chain, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the EDU Chain.
 
 - Telegram Integration
 - Prediction Markets
