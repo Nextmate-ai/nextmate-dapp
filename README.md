@@ -9,7 +9,7 @@ Empowering Cryptocurrency with New Use Cases and Utility
 
   [How we integrated with EDU](./EDU/README.md)
 
-  [How we integrated with Sonic](./Sonic/README.md)
+  [How we integrated with Pharos](./Pharos/README.md)
 
   
 

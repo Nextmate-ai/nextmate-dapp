@@ -19,11 +19,9 @@ Telegram Group: t.me/nextmate_ai
 
 ## Features
 
-- Connected to Coinbase Wallet
-
 - Multi-chain Wallet Support
 
-    We have deployed [smart contracts](https://basescan.org/address/0xcA3DAd26B05C3AFEf9a5d8a53B51d7638A51aD3f) on Base, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Base network.
+    We have deployed [smart contracts](https://pharosscan.xyz/address/0xBA439A278d470b472758662578e5C012f8C0C263) on Pharos, allowing users to participate in prediction markets, create prediction markets, and earn profits from these markets on the Pharos network.
 
 - Telegram Integration
 - Prediction Markets
